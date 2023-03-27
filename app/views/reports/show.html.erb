@@ -15,7 +15,7 @@
       </div>
       <div class="report-buttons flexbox horizontal-reverse wrap-reverse center">
         <% if @report.dismissed %>
-          <%= link_to("Undismiss", undismiss_report_path(@report), method: :post, class: 'dismiss-button button') %>
+          <%= link_to("Undismiss", undismiss_report_path(@report), method: :post, class: 'undismiss-button button') %>
         <% elsif @report.warned %>
           <div class="resolved-button button">Warned</div>
         <% elsif @report.revoked %>
@@ -27,7 +27,7 @@
           <% end %>
           <%= link_to("Dismiss", dismiss_report_path(@report), method: :post, class: 'dismiss-button button') %>
         <% end %>
-        <%= link_to('cancel', reports_path, class: "stealth" ) %>
+        <%= link_to('cancel', params[:back].present? ? params[:back] : reports_path, class: "stealth" ) %>        
       </div>
     </div>
   </div>

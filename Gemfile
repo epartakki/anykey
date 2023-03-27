@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.0.rc1'
+gem 'rails', '~> 6.0'
 
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3', '~> 1.4'
@@ -79,3 +79,11 @@ gem 'fog'
 gem 'redis'
 gem 'redis-namespace'
 gem 'nokogiri'
+
+# Introducing ActiveStorage to replace Draongfly
+gem 'image_processing', '~> 1.2'
+gem "aws-sdk-s3", require: false
+
+# Explicitly adding this to remove warnings introduced by this RoR version
+# TODO: remove this after updating to Ruby 3+ and Rails 7
+gem 'net-http'

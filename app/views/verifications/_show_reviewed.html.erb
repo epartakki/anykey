@@ -1,0 +1,50 @@
+<div class="flexbox horizontal center wrap justify-space-between">
+  <div class="panel-title">
+    <% if @verification.ignored? %>
+      Ignored Request
+    <% elsif @verification.denied? %>
+      Eligibility Denied
+    <% elsif @verification.eligible? %>
+      Eligibility Certification
+    <% end %>
+  </div>
+  <div class="panel-descriptor">
+    Reviewed on <%= l(@verification.reviewed_on, format: "%b. %-d, %Y · %-l:%M%P").upcase %><br>
+    by <%= link_to(@verification.reviewer.display_name, user_path(@verification.reviewer)) %>
+  </div>
+</div>
+<%= render(partial: "verifications/identity") %>
+<%= render(partial: "verifications/review_details") %>
+<div class="verification-buttons flexbox horizontal-reverse wrap-reverse center">
+  <% if @verification.ignored? %>
+    <%= link_to("Unignore", unignore_verification_path(@verification), method: :post, class: 'unignore-button button', tabindex: "2") %>
+  <% else %>
+    <div class="stamp"><%= image_tag("/images/#{@verification.status}.svg", width: "200px") %></div>
+  <% end %>
+  <% if @verification.eligible? %>
+    <form action="<%= resend_cert_verification_path(@verification) %>" id="resend_cert" method="POST" enctype="multipart/form-data" class="flexbox vertical">
+      <div style="hidden">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      </div>
+      <input id="resend_cert_submit" name="commit" type="submit" class="resend-button button" value="Resend Cert" data-confirm="<%="Are you sure you want to resend #{@verification.full_name}'s eligibility certificate for marginalized gender tournaments?\n\nRemember, this generates an email that cannot be unsent 🤖" %>" tabindex="2">
+    </form>
+  <% end %>
+  <%= link_to('cancel', params[:back].present? ? params[:back] : verifications_path, class: "stealth", tabindex: "1" ) %>
+</div>
+<hr class="spacer">
+<div class="flexbox horizontal end wrap-reverse justify-space-between">
+  <div class="pledge-item flexbox vertical stretch flex-1" style="margin-top: 0em;">
+    <div class="item-title flexbox horizontal center">
+      <span class="icon">&#xf002;</span> Related Requests <%= @related_requests.present? ? "(#{@related_requests.count})" : ''%>
+    </div>
+    <% if @related_requests.present? %>
+    <div class="item-list">
+      <%= render(partial: "verifications/row", collection: @related_requests, as: :verification) %>
+    </div>
+    <% else %>
+    <div class="item-text">
+      There are no related eligibility verification requests.
+    </div>
+    <% end %>
+  </div>
+</div>

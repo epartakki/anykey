@@ -1,0 +1,331 @@
+/************************************/
+/*     Verification Page Header     */
+/************************************/
+
+#verification .page-header {
+  background: url('/images/verification-header.jpg') 50% 55% no-repeat;
+  background-size: cover;
+  height: 250px;
+}
+
+#verification .page-header .title {
+  margin-left: 1.4em;
+  color: var(--white-color);
+  text-shadow: var(--black-color) 0px 0px 30px;
+  font-family: var(--title-font);
+  font-weight: 600;
+  font-size: 3em;
+}
+
+
+/************************************/
+/*    Verification Page Sections    */
+/************************************/
+
+#verification .intro-section {
+  max-width: 36em;
+  width: 100%;
+  font-size: 1.1em;
+}
+
+#verification img.feature-image {
+  max-width: 408px;
+  height: auto;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+#verification form#new_verification {
+  max-width: 36em;
+}
+
+#verification .faq-section {
+  max-width: 32em;
+  width: 100%;
+  margin-left: 4em; /* Remove responsively */
+}
+
+#verification .faq-header {
+  font-family: var(--title-font);
+  font-weight: 500;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  padding: 0.85em 1em 0.85em 1em;
+  background: var(--blue-overlay);
+  color: var(--dark-blue-color);
+  border-bottom: 5px solid var(--dark-blue-color);
+}
+
+#verification .faq-item {
+  padding: 1em 1em 1em 1em;
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+
+#verification .faq-item.even {
+  background: var(--light-orange-overlay);
+}
+
+#verification .faq-item.odd {
+  background: var(--medium-orange-overlay);
+}
+
+#verification .faq-item:hover {
+  cursor: pointer;
+  background: var(--blue-overlay);
+}
+
+#verification .faq-item:active {
+  cursor: pointer;
+  background: var(--blue-overlay); 
+}
+
+#verification .faq-item .question {
+  font-weight: 500;
+}
+
+#verification .faq-item .answer {
+  display: none;
+  margin-top: 1em;
+}
+
+
+/************************************/
+/*   Backstage Verification Queue   */
+/************************************/
+
+#backstage-container .record-row .row-detail.ignored {
+  font-weight: 700;
+  color: var(--gray-color);
+}
+
+#backstage-container .record-row .row-detail.eligible {
+ font-weight: 700;
+ color: var(--bright-green-color);
+}
+
+#backstage-container .record-row .row-detail.denied {
+  font-weight: 700;
+  color: var(--alert-red-color);
+}
+
+
+/************************************/
+/*  Backstage Verification Review   */
+/************************************/
+
+#backstage-container .verification-item {
+  margin-top: 1.25em;
+  width: 100%;
+}
+
+#backstage-container .verification-item.half-width {
+  max-width: 20em;
+}
+
+#backstage-container .verification-item .item-title {
+  font-weight: 600;
+  font-size: 0.9em;
+  margin-bottom: 0.2em;
+}
+
+#backstage-container .verification-item .item-text {
+  font-size: 1em;
+}
+
+#backstage-container .verification-item .item-text.empty,
+#backstage-container .verification-item .item-text.submitted,
+#backstage-container .verification-item .item-text.eligible,
+#backstage-container .verification-item .item-text.denied,
+#backstage-container .verification-item .item-text.ignored,
+#backstage-container .verification-item .item-text.pending {
+  font-size: 0.8em;
+  font-weight: 700;
+  margin-top: 0.3em;
+}
+
+#backstage-container .verification-item .item-text.empty {
+  color: var(--light-gray-color);
+}
+
+#backstage-container .verification-item .item-text.submitted {
+  color: var(--bright-orange-color);
+}
+
+#backstage-container .verification-item .item-text.eligible {
+  color: var(--bright-green-color);
+}
+
+#backstage-container .verification-item .item-text.denied {
+  color: var(--alert-red-color);
+}
+
+#backstage-container .verification-item .item-text.ignored {
+  color: var(--gray-color);
+}
+
+#backstage-container .verification-item .item-text.pending {
+  color: var(--bright-blue-color);
+}
+
+#backstage-container .verification-item .item-text.small {
+  font-size: 0.9em;
+}
+
+#backstage-container .verification-item .item-text img {
+  height: 1em;
+  margin-right: 0.4em;
+}
+
+#backstage-container .verification-item .item-text .inline-icon {
+  font-family: var(--solid-icon-font), var(--icon-font);
+  margin-right: 0.4em;
+}
+
+#backstage-container .verification-item .item-text.empty .inline-icon {
+  margin-bottom: 0.2em;
+}
+
+
+/************************************/
+/*  Backstage Verification Overlays */
+/************************************/
+
+#verification-photo-id,
+#verification-doctors-note {
+  position: relative;
+}
+
+#verification-photo-id #photo-id-overlay,
+#verification-doctors-note #doctors-note-overlay  {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--black-overlay);
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+#verification-photo-id #photo-id-overlay .action,
+#verification-doctors-note #doctors-note-overlay .action {
+  background-color: var(--white-overlay);
+  font-family: var(--alt-title-font);
+  font-weight: 400;
+  font-size: 0.7em;
+  text-align: center;
+  color: var(--white-color);
+  padding: 0.8em 1em 0.8em 1em;
+}
+
+
+/************************************/
+/*  Backstage Verification Buttons  */
+/************************************/
+
+#backstage-container .verification-buttons {
+  margin-top: 2em;
+}
+
+#backstage-container .verification-buttons .button {
+  border: 4px solid var(--light-black-color);
+  color: var(--white-color);
+  font-family: var(--title-font);
+  font-weight: 500;
+  font-size: 1.2em;
+  padding: 0.75em 1em 0.75em 1em;
+  text-transform: uppercase;
+  text-align: center;
+  min-width: 4.5em;
+  margin-left: 2em;
+}
+
+#backstage-container .verification-buttons .button.ignore-button {
+  background-color: var(--gray-color);
+}
+
+#backstage-container .verification-buttons .button.unignore-button {
+  background-color: var(--bright-green-color);
+}
+
+#backstage-container .verification-buttons .button.deny-button {
+  background-color: var(--alert-red-color);
+}
+
+#backstage-container .verification-buttons .button.verify-button {
+  background-color: var(--bright-green-color);
+}
+
+#backstage-container .verification-buttons .button.resend-button {
+  border: 4px solid var(--bright-green-color);
+  color: var(--bright-green-color);
+  background-color: var(--light-green-overlay);
+}
+
+#backstage-container .verification-buttons .stamp {
+  margin-left: 2em;
+}
+
+#backstage-container .verification-buttons .button:hover {
+  cursor: pointer;
+  background-color: var(--bright-blue-color);
+}
+
+#backstage-container .verification-buttons .button.resend-button:hover {
+  border: 4px solid var(--bright-orange-color);
+  color: var(--bright-orange-color);
+  background-color: var(--light-orange-overlay);
+}
+
+#backstage-container .verification-buttons .button:focus {
+  cursor: pointer;
+  background-color: var(--bright-blue-color);  
+  outline: none;
+}
+
+#backstage-container .verification-buttons .button.resend-button:focus {
+  border: 4px solid var(--bright-blue-color);
+  color: var(--bright-blue-color);
+  background-color: var(--light-blue-overlay);
+}
+
+#backstage-container .verification-buttons .button::-moz-focus-inner {
+  border: 0 !important;
+}
+
+
+/***********************************/
+/*         Responsiveness          */
+/***********************************/
+
+@media (max-width:80em) {
+  #verification .faq-section {
+    margin-left: 0em;
+  }
+}
+
+@media (max-width:68em) {
+  #verification .intro-section {
+    margin-top: 2em;
+  }
+}
+
+@media (max-width:46em) {
+  #backstage-container .verification-buttons .button {
+    width: 100%;
+    margin-left: 0em;
+    margin-top: 2em;
+  }
+  
+  #backstage-container .verification-buttons a.stealth {
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 2px solid var(--bright-green-color);
+    margin-bottom: -2px;
+  }
+}
+
